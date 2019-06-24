@@ -1,0 +1,15 @@
+launchSequenceChecker <- function(systemNames, stepNumbers) {
+
+      systemNames<-unlist(systemNames)
+      stepNumbers<-unlist(stepNumbers)
+      systems<-names(sort(table(systemNames)))
+       
+    for(i in 1:length(systems)){    
+        
+        sequence<-stepNumbers[which(systemNames==systems[i])]
+        check<-.Internal(is.unsorted(sequence, TRUE))
+        if(check==TRUE){return(FALSE)} 
+    }
+    
+    return(TRUE)
+}
