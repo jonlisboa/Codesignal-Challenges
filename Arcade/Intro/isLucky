@@ -1,0 +1,12 @@
+isLucky <- function(n) {
+    ticket<-as.character(n)
+    ticket<-unlist(strsplit(as.character(n),split=""))
+    length<-length(ticket)
+    
+  return(
+    sum(as.numeric(ticket[1:(length/2)])) ==
+    sum(as.numeric(ticket[(1+length/2):length]))
+    )
+
+
+}
