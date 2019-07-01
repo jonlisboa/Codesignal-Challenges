@@ -1,0 +1,9 @@
+lateRide <- function(n) {
+     
+     hours<-n/60
+     inthours<-as.integer(hours)
+     decimal<-as.integer((hours-inthours)*60)
+     number<-paste(inthours, decimal,sep="")
+     sum(as.numeric(strsplit(number, "")[[1]]))
+   
+}
