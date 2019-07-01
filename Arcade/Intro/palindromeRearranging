@@ -1,0 +1,13 @@
+palindromeRearranging <- function(inputString) {
+
+
+    
+    str<-unlist(strsplit(inputString,''))
+    if(length(which((as.numeric(table(str))%%2)>0))>1){
+        return(FALSE)
+    }
+    
+    return(TRUE)
+
+
+}
