@@ -1,0 +1,7 @@
+allLongestStrings <- function(inputArray) {
+
+    lengthstr<-sapply(inputArray, FUN=nchar)
+
+    return(inputArray[which(lengthstr==max(lengthstr))])
+
+}
