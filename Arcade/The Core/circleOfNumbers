@@ -1,0 +1,13 @@
+circleOfNumbers <- function(n, firstNumber) {
+    
+ circle<-c(0:(n-1))
+
+if(((n/2)+firstNumber+1)>length(circle))
+{
+  circle[(n/2)+firstNumber+1-n]
+}
+
+else{
+  circle[(n/2)+firstNumber+1]
+}
+}
