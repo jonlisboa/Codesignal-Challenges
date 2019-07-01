@@ -1,0 +1,3 @@
+maxMultiple <- function(divisor, bound) {
+    bound-(bound%%divisor)
+}
