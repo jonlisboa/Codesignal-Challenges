@@ -1,0 +1,51 @@
+almostIncreasingSequence <- function(sequence) {
+  
+  
+  sequence<-as.numeric(sequence)
+  dif<-diff(sequence)
+  
+  if((length(unique(sequence)) - length(sequence) <= -2)| length(dif[dif<0])>1)
+  {
+    return(FALSE)    
+  }
+  
+  sequenceT<-sequence
+  checkT<-sort(order(sequenceT)) == order(sequenceT)
+  remove<-which(checkT==FALSE)
+  
+  
+  
+  u<-1
+  
+  while(u<=length(remove) & u <1830  )
+  {
+    
+    excl<-remove[u]  
+    #if(length(remove)>5000){ excl<-remove[sample(c(1:length(remove)),1)]}  
+    sequenceT<-sequence[-excl]
+    checkT<-sort(order(sequenceT)) == order(sequenceT)
+    u<-u+1
+    
+    if(sum(checkT==FALSE) == 0){u<-length(remove)+1}
+    
+  }
+  
+  
+  if(length(which(diff(sequence)==0)>0) & length(sequence)>2)
+   {
+      return(FALSE)
+    }
+
+  
+  if(sum(checkT==FALSE)!=0)
+
+  {
+    return(FALSE)    
+  }
+  
+  
+  return(TRUE)
+  
+  
+  
+}
