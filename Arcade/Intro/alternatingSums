@@ -1,0 +1,10 @@
+alternatingSums <- function(a) {
+    
+    a<-unlist(a)
+    t2<-seq(0,length(a),2)
+    t1<-seq(1,length(a),2)
+
+    return(as.list(c(sum(a[t1]),sum(a[t2]))))
+
+
+}
