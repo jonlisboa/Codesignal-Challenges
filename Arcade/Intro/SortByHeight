@@ -1,0 +1,8 @@
+sortByHeight <- function(a) {
+    a<-as.vector(unlist(a))
+    people<-a[which(a>0)]
+    sorted<-sort(people)
+
+    a[which(a>0)]<-sorted
+    return(as.list(a))
+}
