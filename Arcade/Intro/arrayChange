@@ -1,0 +1,28 @@
+arrayChange <- function(inputArray) {
+    
+    a<-unlist(inputArray)
+    
+
+add<-c()
+
+
+i<-2
+
+if(is.unsorted(a,,TRUE)==FALSE){return(0)}
+
+for (i in 2:length(a)){
+  
+    if(a[i-1]>=a[i]){
+            d<-(abs(diff(c(a[i-1],a[i]))))+1
+            add[i-1]<-d
+            a[i]<-a[i]+d
+            }else{
+              add[i-1]<-0
+            }
+  i<-i+1
+  
+}
+
+    return(sum(add))
+
+}
