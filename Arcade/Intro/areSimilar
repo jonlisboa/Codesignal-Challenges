@@ -1,0 +1,16 @@
+areSimilar <- function(a, b) {
+
+        a<-unlist(a)
+        b<-unlist(b)
+
+        if(all(a %in% b)==FALSE){return(FALSE)}
+        diff<-a!=b
+        if(sum(diff)>2){return(FALSE)}
+        if(all(b[which(diff==TRUE)]%in%a[which(diff==TRUE)])==FALSE){return(FALSE)}
+
+    
+
+        return(TRUE)
+     
+
+}
