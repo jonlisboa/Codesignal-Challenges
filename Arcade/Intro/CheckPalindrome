@@ -1,0 +1,7 @@
+checkPalindrome <- function(inputString) {
+
+    
+    identical(inputString,
+              paste(rev(substring(inputString,1:nchar(inputString),1:nchar(inputString))),collapse="") 
+             )
+}
