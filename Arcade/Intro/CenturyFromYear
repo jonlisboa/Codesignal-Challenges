@@ -1,0 +1,3 @@
+centuryFromYear <- function(year) {
+    ceiling(year/100)
+}
