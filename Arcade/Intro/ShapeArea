@@ -1,0 +1,3 @@
+shapeArea <- function(n) {
+  area<- 1 - 2*n + 2*n^2
+  }
