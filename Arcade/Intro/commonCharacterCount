@@ -1,0 +1,27 @@
+commonCharacterCount <- function(s1, s2) {
+
+    s1<-unlist(strsplit(s1,''))
+    s2<-unlist(strsplit(s2,''))
+
+    common<-intersect(s1,s2)
+
+    if(length(common)==0){
+        return(0)
+    }
+
+    df<-data.frame(letter=common,s1=NA,s2=NA)
+
+    i<-1
+
+    while(i<=length(common)){
+
+        df[i,2]<-sum(common[i]==s1)
+        df[i,3]<-sum(common[i]==s2)
+        i<-i+1
+    
+        }
+
+    sum(unlist(apply(df[,2:3],1,min)))
+
+
+}
