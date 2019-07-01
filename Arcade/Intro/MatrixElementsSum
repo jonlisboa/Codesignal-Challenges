@@ -1,0 +1,22 @@
+
+matrixElementsSum <- function(matrix) {
+
+l<-matrix
+matrix<- matrix( unlist(matrix), nrow=length(l), ncol=length(l[[1]]), byrow =TRUE)
+
+haunted<-which(matrix==0,arr.ind=TRUE)
+
+i<-1
+
+while(i <= ncol(matrix)){
+col<-haunted[which(haunted[,2]==i),1]
+if(length(col)>0){
+    highRoom<-c(min(col),i)
+    matrix[min(col):nrow(matrix),i]<-0
+    }
+i<-i+1
+}
+
+return(sum(matrix))
+
+}
